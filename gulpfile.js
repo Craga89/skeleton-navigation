@@ -52,8 +52,6 @@ var compilerOptions = {
   }
 };
 
-var jshintConfig = {esnext:true};
-
 gulp.task('clean', function() {
  return gulp.src([path.output])
     .pipe(vinylPaths(del));
@@ -75,7 +73,7 @@ gulp.task('build-html', function () {
 
 gulp.task('lint', function() {
   return gulp.src(path.source)
-    .pipe(jshint(jshintConfig))
+    .pipe(jshint())
     .pipe(jshint.reporter(stylish));
 });
 
